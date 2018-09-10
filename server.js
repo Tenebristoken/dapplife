@@ -9,7 +9,7 @@ const provider = new Web3.providers.HttpProvider("http://localhost:8545")
 const web3 = new Web3(provider);
 const asciiToHex = Web3.utils.asciiToHex;
 
-const candidates = ['Rama', 'Nick', 'Jose'];
+const candidates = ['DonaldTrump', 'BarackObama', 'BernieSanders'];
 
 web3.eth.getAccounts()
 .then((accounts) => {
@@ -52,18 +52,18 @@ web3.eth.getAccounts()
   .then((result) => {
     deployedContract = result;
     // console.log('deployedContract', deployedContract);
-    return deployedContract.methods.totalVotesFor(asciiToHex('Rama')).call();
+    return deployedContract.methods.totalVotesFor(asciiToHex('DonaldTrump')).call();
   })
-  .then((votesRama) => {
-    console.log('votesRama', votesRama);
-    return deployedContract.methods.voteForCandidate(asciiToHex('Rama')).send();
+  .then((votesDonaldTrump) => {
+    console.log('votesDonaldTrump', votesDonaldTrump);
+    return deployedContract.methods.voteForCandidate(asciiToHex('DonaldTrump')).send();
   })
   .then((voteResult) => {
     // console.log('voteResult', voteResult);
-    return deployedContract.methods.totalVotesFor(asciiToHex('Rama')).call();
+    return deployedContract.methods.totalVotesFor(asciiToHex('DonaldTrump')).call();
   })
-  .then((votesRama) => {
-    console.log('votesRama', votesRama);
+  .then((votesDonaldTrump) => {
+    console.log('votesDonaldTrump', votesDonaldTrump);
   })
   .then(() => {
     const server = http.createServer((req, res) => {

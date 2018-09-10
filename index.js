@@ -4,7 +4,7 @@ web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 asciiToHex = Web3.utils.asciiToHex;
 contractInstance = new web3.eth.Contract(ABI_DEFINITION, CONTRACT_ADDRESS);
 
-candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3"}
+candidates = {"Donald Trump": "candidate-1", "Barack Obama": "candidate-2", "Bernie Sander": "candidate-3"}
 
 function voteForCandidate() {
   candidateName = $("#candidate").val();
